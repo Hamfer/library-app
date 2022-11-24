@@ -21,6 +21,7 @@
       rel="icon"
       media="(prefers-color-scheme: dark)" />
     <script src="../tw.config.js"></script>
+    <script src="../theme.js"></script>
     <title>Login to Library's App</title>
   </head>
   <body>
@@ -40,7 +41,7 @@
       <section
         id="right"
         class="dark:bg-dark-surface flex flex-1 flex-col justify-between transition-all md:flex-[2]">
-        <div class="mx-4 my-4 flex justify-end">
+        <div class="mx-4 my-4 flex items-center justify-between">
           <img
             src="../img/bookshelf.png"
             alt="Bookshelf icon"
@@ -49,6 +50,88 @@
             src="../img/bookshelf-dark.png"
             alt="Bookshelf icon"
             class="hidden w-12 dark:block md:w-16 lg:w-24" />
+          <button
+            class="cursor-pointer rounded-lg border-0 bg-inherit p-2"
+            onclick="toggleTheme()">
+            <svg
+              id="theme-toggler"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <!-- Moon -->
+              <path
+                pathLength="1"
+                class="moon-icon"
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              <!-- Sun -->
+              <circle
+                pathLength="1"
+                class="sun-icon"
+                cx="12"
+                cy="12"
+                r="5"></circle>
+              <line
+                pathLength="1"
+                class="sun-icon"
+                x1="12"
+                y1="1"
+                x2="12"
+                y2="3"></line>
+              <line
+                pathLength="1"
+                class="sun-icon"
+                x1="12"
+                y1="21"
+                x2="12"
+                y2="23"></line>
+              <line
+                pathLength="1"
+                class="sun-icon"
+                x1="4.22"
+                y1="4.22"
+                x2="5.64"
+                y2="5.64"></line>
+              <line
+                pathLength="1"
+                class="sun-icon"
+                x1="18.36"
+                y1="18.36"
+                x2="19.78"
+                y2="19.78"></line>
+              <line
+                pathLength="1"
+                class="sun-icon"
+                x1="1"
+                y1="12"
+                x2="3"
+                y2="12"></line>
+              <line
+                pathLength="1"
+                class="sun-icon"
+                x1="21"
+                y1="12"
+                x2="23"
+                y2="12"></line>
+              <line
+                pathLength="1"
+                class="sun-icon"
+                x1="4.22"
+                y1="19.78"
+                x2="5.64"
+                y2="18.36"></line>
+              <line
+                pathLength="1"
+                class="sun-icon"
+                x1="18.36"
+                y1="5.64"
+                x2="19.78"
+                y2="4.22"></line>
+            </svg>
+          </button>
         </div>
         <div class="md:mx-18 mx-6">
           <h1
@@ -117,10 +200,10 @@
               <button
                 type="submit"
                 id="submitButton"
-                class="relative flex-1 overflow-hidden rounded-md bg-black py-2 text-white transition-all duration-500 hover:flex-[1.2] dark:bg-white dark:text-black">
+                class="relative flex-1 overflow-hidden rounded-md bg-black py-2 text-white transition-all hover:flex-[1.2] dark:bg-white dark:text-black">
                 <div
                   id="loading"
-                  class="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-white/80 opacity-0 transition-all duration-700">
+                  class="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-white/80 opacity-0 transition-all">
                   <svg
                     class="h-5 w-5 animate-spin text-black motion-reduce:hidden"
                     xmlns="http://www.w3.org/2000/svg"
@@ -139,9 +222,7 @@
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
                 </div>
-                <span id="submitText" class="transition-all duration-500">
-                  Login
-                </span>
+                <span id="submitText" class="transition-all">Login</span>
               </button>
               <button
                 type="button"
