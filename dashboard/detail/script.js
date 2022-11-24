@@ -2,10 +2,17 @@ const [urlImage, title] = document.querySelectorAll('form#editBook input');
 const [description] = document.querySelectorAll('form#editBook textarea');
 const modalEditBook = document.getElementById('modal-editbook');
 const modalDeleteBook = document.getElementById('modal-deletebook');
+const form = document.getElementById('editBook');
 
 const goBack = () => {
   history.back();
 };
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  closeEditModal();
+});
 
 modalEditBook.addEventListener('click', e => {
   if (e.target.id === modalEditBook.id) {

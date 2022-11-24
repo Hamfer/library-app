@@ -4,9 +4,36 @@
   box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: light) {
+  a {
+    background: linear-gradient(0deg, black, black) no-repeat right bottom / 0
+      var(--bg-h);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    background: linear-gradient(0deg, white, white) no-repeat right bottom / 0
+      var(--bg-h);
+  }
+}
+
+inp ut:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid rgb(15, 169, 15);
+  -webkit-text-fill-color: rgb(15, 169, 15);
+  -webkit-box-shadow: 0 0 0px 1000px #0000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 a {
-  background: linear-gradient(0deg, black, black) no-repeat right bottom / 0
-    var(--bg-h);
   transition: background-size 350ms;
   --bg-h: 2px;
   padding-bottom: 2px;

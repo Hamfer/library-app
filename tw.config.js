@@ -4,6 +4,8 @@ tailwind.config = {
       colors: {
         'light-gray': '#424242',
         'lighter-gray': '#D0CCCC',
+        'dark-surface': '#181A1B',
+        'little-dark-surface': '#222527',
       },
       backgroundImage: {
         'auth-img':
