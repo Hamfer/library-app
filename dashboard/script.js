@@ -62,7 +62,7 @@ title.addEventListener('input', () => {
 });
 
 const handleLogout = () => {
-  window.location.href = '/login';
+  window.location.href = '../login';
   localStorage.removeItem('loggedin');
 };
 
