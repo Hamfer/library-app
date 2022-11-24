@@ -120,5 +120,5 @@ const submitForm = () => {
   setLoading(false);
 
   localStorage.setItem('loggedin', true);
-  window.location.href = '/dashboard';
+  window.location.href = './dashboard';
 };
