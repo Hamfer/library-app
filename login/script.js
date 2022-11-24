@@ -24,7 +24,7 @@ togglePassword.addEventListener('click', () => {
 });
 
 const onRegister = () => {
-  window.location.href = '/register';
+  window.location.href = '../register';
 };
 
 let error = {};
@@ -120,5 +120,5 @@ const submitForm = () => {
   setLoading(false);
 
   localStorage.setItem('loggedin', true);
-  window.location.href = './dashboard';
+  window.location.href = '../dashboard';
 };

@@ -27,7 +27,7 @@ password.addEventListener('input', () => {
 });
 
 const onLogin = () => {
-  window.location.href = '/login';
+  window.location.href = '../login';
 };
 
 togglePassword.addEventListener('click', () => {
@@ -149,5 +149,5 @@ const submitForm = () => {
 
   setLoading(false);
 
-  window.location.href = '/login';
+  window.location.href = '../login';
 };
