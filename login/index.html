@@ -39,18 +39,24 @@
       </section>
       <section
         id="right"
-        class="flex flex-1 flex-col justify-between transition-all md:flex-[2]">
+        class="dark:bg-dark-surface flex flex-1 flex-col justify-between transition-all md:flex-[2]">
         <div class="mx-4 my-4 flex justify-end">
           <img
             src="../img/bookshelf.png"
             alt="Bookshelf icon"
-            class="w-12 md:w-16 lg:w-24" />
+            class="w-12 dark:hidden md:w-16 lg:w-24" />
+          <img
+            src="../img/bookshelf-dark.png"
+            alt="Bookshelf icon"
+            class="hidden w-12 dark:block md:w-16 lg:w-24" />
         </div>
         <div class="md:mx-18 mx-6">
-          <h1 class="text-light-gray pb-2 text-4xl font-bold md:text-5xl">
+          <h1
+            class="text-light-gray dark:text-lighter-gray pb-2 text-4xl font-bold md:text-5xl">
             Login
           </h1>
-          <h2 class="text-light-gray text-sm font-semibold md:text-base">
+          <h2
+            class="text-light-gray dark:text-lighter-gray text-sm font-semibold md:text-base">
             Welcome Back, Please Login<br />
             to your Account
           </h2>
@@ -61,10 +67,10 @@
                 name="email"
                 id="email"
                 value=""
-                class="transtion-all border-lighter-gray [&:not(input[value=''])]:pt-7 peer w-full rounded-md border bg-white px-3 py-2 drop-shadow-xl focus:pt-7 focus:text-black focus:outline-2 focus:outline-black disabled:bg-gray-100" />
+                class="border-lighter-gray [&:not(input[value=''])]:pt-7 dark:bg-dark-surface peer w-full rounded-md border bg-white px-3 py-2 text-black drop-shadow-xl transition-all focus:pt-7 focus:outline-2 focus:outline-black disabled:bg-gray-100 dark:text-white dark:focus:outline-white dark:disabled:bg-white/10" />
               <label
                 for="email"
-                class="text-lighter-gray peer-[&:not(input[value=''])]:-translate-y-[18%] pointer-events-none absolute top-0 bottom-0 left-3 flex items-center text-sm font-semibold transition-all peer-focus:-translate-y-[18%] peer-focus:text-black">
+                class="text-lighter-gray peer-[&:not(input[value=''])]:-translate-y-[18%] pointer-events-none absolute top-0 bottom-0 left-3 flex items-center text-sm font-semibold transition-all peer-focus:-translate-y-[18%] peer-focus:text-black dark:peer-focus:text-white">
                 Email Address
               </label>
             </div>
@@ -75,15 +81,15 @@
                 name="password"
                 id="password"
                 value=""
-                class="transtion-all border-lighter-gray [&:not(input[value=''])]:pt-7 peer w-full rounded-md border bg-white px-3 py-2 drop-shadow-xl focus:pt-7 focus:outline-2 focus:outline-black" />
+                class="border-lighter-gray [&:not(input[value=''])]:pt-7 dark:bg-dark-surface peer w-full rounded-md border bg-white px-3 py-2 text-black drop-shadow-xl transition-all focus:pt-7 focus:outline-2 focus:outline-black disabled:bg-gray-100 dark:text-white dark:focus:outline-white dark:disabled:bg-white/10" />
               <label
                 for="password"
-                class="text-lighter-gray peer-[&:not(input[value=''])]:-translate-y-[18%] pointer-events-none absolute top-0 bottom-0 left-3 flex items-center text-sm font-semibold transition-all peer-focus:-translate-y-[18%] peer-focus:text-black">
+                class="text-lighter-gray peer-[&:not(input[value=''])]:-translate-y-[18%] pointer-events-none absolute top-0 bottom-0 left-3 flex items-center text-sm font-semibold transition-all peer-focus:-translate-y-[18%] peer-focus:text-black dark:peer-focus:text-white">
                 Password
               </label>
               <div
                 id="togglePassword"
-                class="absolute right-0 top-0 bottom-0 my-2 mr-3 flex aspect-square cursor-pointer items-center justify-center rounded-full transition-all hover:bg-black/20">
+                class="absolute right-0 top-0 bottom-0 my-2 mr-3 flex aspect-square cursor-pointer items-center justify-center rounded-full transition-all hover:bg-black/20 dark:text-white dark:hover:bg-white/20">
                 <span class="fa fa-fw fa-eye field-icon"></span>
               </div>
             </div>
@@ -94,16 +100,16 @@
                   type="checkbox"
                   name="remember"
                   id="remember"
-                  class="scale-150 accent-black group-hover:cursor-pointer" />
+                  class="scale-150 accent-black group-hover:cursor-pointer dark:accent-white" />
                 <label
                   for="remember"
-                  class="text-lighter-gray ml-4 font-semibold transition-all group-hover:cursor-pointer group-hover:text-black">
+                  class="text-lighter-gray ml-4 font-semibold transition-all group-hover:cursor-pointer group-hover:text-black dark:group-hover:text-white">
                   Remember me
                 </label>
               </div>
               <a
                 href="#"
-                class="text-light-gray self-end font-semibold hover:text-black">
+                class="text-light-gray self-end font-semibold hover:text-black dark:hover:text-white">
                 Forgot Password
               </a>
             </div>
@@ -111,7 +117,7 @@
               <button
                 type="submit"
                 id="submitButton"
-                class="relative flex-1 rounded-md bg-black py-2 text-white transition-all duration-500 hover:flex-[1.2]">
+                class="relative flex-1 overflow-hidden rounded-md bg-black py-2 text-white transition-all duration-500 hover:flex-[1.2] dark:bg-white dark:text-black">
                 <div
                   id="loading"
                   class="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-white/80 opacity-0 transition-all duration-700">
@@ -139,7 +145,7 @@
               </button>
               <button
                 type="button"
-                class="border-light-gray text-light-gray flex-1 rounded-md border py-2 transition-all duration-500 hover:flex-[1.2]"
+                class="border-light-gray dark:border-lighter-gray text-light-gray dark:text-lighter-gray flex-1 rounded-md border py-2 transition-all duration-500 hover:flex-[1.2]"
                 onclick="onRegister()">
                 Sign up
               </button>
@@ -147,10 +153,15 @@
           </form>
         </div>
         <div class="md:mx-18 mx-6 mb-6">
-          <p class="text-light-gray">
+          <p class="text-light-gray dark:text-lighter-gray">
             By signing up you agree to Book's<br />
-            <a href="#" class="font-bold text-black">Terms and Conditions</a> &
-            <a href="#" class="font-bold text-black">Privacy Policy</a>
+            <a href="#" class="font-bold text-black dark:text-white">
+              Terms and Conditions
+            </a>
+            &
+            <a href="#" class="font-bold text-black dark:text-white">
+              Privacy Policy
+            </a>
           </p>
         </div>
       </section>

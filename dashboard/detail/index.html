@@ -28,20 +28,20 @@
       class="flex w-screen flex-[2] flex-col justify-between bg-[url(../../img/header-detail.png)] bg-cover">
       <div class="flex items-center justify-between">
         <button
-          class="m-4 aspect-square h-10 rounded-full bg-white shadow-md"
+          class="dark:bg-dark-surface m-4 aspect-square h-10 rounded-full bg-white shadow-md transition-all hover:scale-125 dark:text-white"
           onclick="goBack()">
           <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </button>
-        <div class="mx-4 my-2 flex gap-6 font-bold text-white">
+        <div class="mx-4 my-2 flex gap-6 font-bold text-white dark:text-black">
           <button
             onclick="openEditModal()"
-            class="min-[320px]:aspect-auto min-[320px]:hover:px-6 flex aspect-square items-center rounded-lg bg-black/20 px-4 py-2 transition-all hover:bg-white/30 hover:text-black">
+            class="min-[320px]:aspect-auto min-[320px]:hover:px-6 flex aspect-square items-center rounded-lg bg-black/20 px-4 py-2 transition-all hover:bg-white/30 hover:text-black dark:bg-white/40 dark:hover:bg-black/30 dark:hover:text-white">
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
             <span class="min-[320px]:inline ml-2 hidden">Edit</span>
           </button>
           <button
             onclick="openDeleteModal()"
-            class="min-[320px]:aspect-auto min-[320px]:hover:px-6 flex aspect-square items-center rounded-lg bg-black/20 px-4 py-2 transition-all hover:bg-white/30 hover:text-red-700">
+            class="min-[320px]:aspect-auto min-[320px]:hover:px-6 flex aspect-square items-center rounded-lg bg-black/20 px-4 py-2 transition-all hover:bg-white/30 hover:text-red-600 dark:bg-white/40 dark:hover:bg-black/30">
             <i class="fa fa-trash-o" aria-hidden="true"></i>
             <span class="min-[320px]:inline ml-2 hidden">Delete</span>
           </button>
@@ -52,8 +52,8 @@
         alt=""
         class="mx-2 w-40 translate-y-[20%] self-end md:mx-10 md:translate-y-[50%]" />
     </header>
-    <main class="flex flex-[3] flex-col md:flex-row">
-      <div class="flex-1 py-3 px-3 md:flex-[4] md:px-12">
+    <main class="dark:bg-dark-surface flex flex-[3] flex-col md:flex-row">
+      <div class="flex-1 py-3 px-3 dark:text-white md:flex-[4] md:px-12">
         <div class="flex flex-col items-start md:flex-row md:items-center">
           <div class="flex flex-1 flex-col items-start gap-1">
             <h3
@@ -88,11 +88,11 @@
     </main>
     <div
       id="modal-editbook"
-      class="absolute top-0 right-0 left-0 bottom-0 z-30 hidden items-center justify-center bg-black/30 px-4 opacity-0 transition-all duration-700">
+      class="absolute top-0 right-0 left-0 bottom-0 z-30 hidden items-center justify-center bg-black/30 px-4 opacity-0 transition-all duration-700 dark:bg-white/10">
       <div
-        class="mx-4 min-w-full -translate-y-[200%] rounded-xl bg-white p-6 transition-all duration-300 md:min-w-[40em] lg:min-w-[50em]">
+        class="dark:bg-dark-surface mx-4 min-w-full -translate-y-[200%] rounded-xl bg-white p-6 transition-all duration-300 md:min-w-[40em] lg:min-w-[50em]">
         <div class="flex justify-between">
-          <h1 class="text-2xl font-bold">Edit Book</h1>
+          <h1 class="text-2xl font-bold dark:text-white">Edit Book</h1>
           <button
             type="button"
             class="text-2xl text-red-500"
@@ -102,49 +102,50 @@
         </div>
         <form id="editBook" class="flex flex-col gap-4 py-4">
           <div class="flex w-full items-center">
-            <h2 class="hidden w-1/4 sm:inline">Url Image</h2>
+            <h2 class="hidden w-1/4 dark:text-white sm:inline">Url Image</h2>
             <div class="relative w-full sm:w-3/4">
               <input
                 type="text"
                 name="urlimage"
                 id="urlimage"
                 value="dilan.png"
-                class="transtion-all border-lighter-gray [&:not(input[value=''])]:pt-7 peer w-full rounded-md border bg-white px-3 py-2 drop-shadow-xl focus:pt-7 focus:text-black focus:outline-2 focus:outline-black disabled:bg-gray-100" />
+                class="border-lighter-gray [&:not(input[value=''])]:pt-7 dark:bg-dark-surface peer w-full rounded-md border bg-white px-3 py-2 text-black drop-shadow-xl transition-all focus:pt-7 focus:outline-2 focus:outline-black disabled:bg-gray-100 dark:text-white dark:focus:outline-white dark:disabled:bg-white/10" />
               <label
                 for="urlimage"
-                class="text-lighter-gray peer-[&:not(input[value=''])]:-translate-y-[18%] pointer-events-none absolute top-0 bottom-0 left-3 flex items-center text-sm font-semibold transition-all peer-focus:-translate-y-[18%] peer-focus:text-black">
+                class="text-lighter-gray peer-[&:not(input[value=''])]:-translate-y-[18%] pointer-events-none absolute top-0 bottom-0 left-3 flex items-center text-sm font-semibold transition-all peer-focus:-translate-y-[18%] peer-focus:text-black dark:peer-focus:text-white">
                 Url Image
               </label>
             </div>
           </div>
           <div class="flex w-full items-center">
-            <h2 class="hidden w-1/4 sm:inline">Title</h2>
+            <h2 class="hidden w-1/4 dark:text-white sm:inline">Title</h2>
             <div class="relative w-full sm:w-3/4">
               <input
                 type="text"
                 name="title"
                 id="title"
                 value="DILAN 1990"
-                class="transtion-all border-lighter-gray [&:not(input[value=''])]:pt-7 peer w-full rounded-md border bg-white px-3 py-2 drop-shadow-xl focus:pt-7 focus:text-black focus:outline-2 focus:outline-black disabled:bg-gray-100" />
+                class="border-lighter-gray [&:not(input[value=''])]:pt-7 dark:bg-dark-surface peer w-full rounded-md border bg-white px-3 py-2 text-black drop-shadow-xl transition-all focus:pt-7 focus:outline-2 focus:outline-black disabled:bg-gray-100 dark:text-white dark:focus:outline-white dark:disabled:bg-white/10" />
               <label
                 for="title"
-                class="text-lighter-gray peer-[&:not(input[value=''])]:-translate-y-[18%] pointer-events-none absolute top-0 bottom-0 left-3 flex items-center text-sm font-semibold transition-all peer-focus:-translate-y-[18%] peer-focus:text-black">
+                class="text-lighter-gray peer-[&:not(input[value=''])]:-translate-y-[18%] pointer-events-none absolute top-0 bottom-0 left-3 flex items-center text-sm font-semibold transition-all peer-focus:-translate-y-[18%] peer-focus:text-black dark:peer-focus:text-white">
                 Title
               </label>
             </div>
           </div>
           <div class="flex w-full items-center">
-            <h2 class="hidden w-1/4 sm:inline">Description</h2>
+            <h2 class="hidden w-1/4 dark:text-white sm:inline">Description</h2>
             <div class="relative w-full sm:w-3/4">
               <textarea
                 name="description"
                 id="description"
                 value="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, a fugiat, neque accusantium porro itaque, eum deserunt delectus sed unde libero ratione! Unde atque distinctio dignissimos illum, laudantium officiis! Quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos aspernatur, debitis impedit qui rem magnam ab dolorum iste corrupti soluta eius illo natus. Architecto id consequatur iure. Maxime, facere incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ad quasi veniam recusandae molestiae autem magni nulla laborum ipsam asperiores ab cumque dignissimos, mollitia aut provident quia quisquam sint. Animi!"
                 placeholder="Description"
-                class="transtion-all border-lighter-gray w-full rounded-md border bg-white px-3 py-2 drop-shadow-xl focus:text-black focus:outline-2 focus:outline-black disabled:bg-gray-100"></textarea>
+                class="border-lighter-gray dark:bg-dark-surface w-full rounded-md border bg-white px-3 py-2 drop-shadow-xl transition-all focus:text-black focus:outline-2 focus:outline-black disabled:bg-gray-100 dark:text-white dark:focus:text-white dark:focus:outline-white dark:disabled:bg-white/10"></textarea>
             </div>
           </div>
           <button
+            type="submit"
             class="w-full rounded-lg bg-green-600 px-6 py-2 font-bold text-white shadow-sm sm:w-auto sm:self-end">
             Save
           </button>
@@ -153,9 +154,9 @@
     </div>
     <div
       id="modal-deletebook"
-      class="absolute top-0 right-0 left-0 bottom-0 z-30 hidden items-center justify-center bg-black/30 px-4 opacity-0 transition-all duration-700">
+      class="absolute top-0 right-0 left-0 bottom-0 z-30 hidden items-center justify-center bg-black/30 px-4 opacity-0 transition-all duration-700 dark:bg-white/10">
       <div
-        class="mx-4 flex min-w-full -translate-y-[200vw] flex-col rounded-xl bg-white p-6 transition-all duration-300 md:min-w-[40em] lg:min-w-[50em]">
+        class="dark:bg-dark-surface mx-4 flex min-w-full -translate-y-[200vw] flex-col rounded-xl bg-white p-6 transition-all duration-300 md:min-w-[40em] lg:min-w-[50em]">
         <button
           type="button"
           class="self-end text-2xl text-red-500"
@@ -166,7 +167,9 @@
           <i
             class="fa fa-check-circle-o py-4 text-8xl text-green-500"
             aria-hidden="true"></i>
-          <h1>Buku <span>Dilan 1990</span> berhasil dihapus !</h1>
+          <h1 class="dark:text-white">
+            Buku <span>Dilan 1990</span> berhasil dihapus !
+          </h1>
         </div>
       </div>
     </div>

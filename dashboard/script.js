@@ -8,6 +8,7 @@ const bookCarousel = document.getElementById('book-carousel');
 const sideNav = document.getElementById('sidenav-overlay');
 const sideNavMenu = document.getElementById('menu-sidenav');
 const sideNavClose = document.getElementById('close-sidenav');
+const form = document.getElementById('addBook');
 
 var splide = new Splide('.splide', {
   type: 'loop',
@@ -19,6 +20,12 @@ var splide = new Splide('.splide', {
 });
 
 splide.mount();
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  closeModal();
+});
 
 const openSideNav = () => {
   sideNav.classList.remove('hidden');
