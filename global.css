@@ -71,7 +71,7 @@ svg {
   stroke-dasharray: 1px 1px;
   transition: stroke-dasharray 0.5s ease-in, opacity 300ms ease-in;
   opacity: 1;
-  stroke: #666;
+  stroke: #999;
 }
 
 .sun-icon-dark {
