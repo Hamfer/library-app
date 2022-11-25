@@ -9,12 +9,40 @@
     background: linear-gradient(0deg, black, black) no-repeat right bottom / 0
       var(--bg-h);
   }
+
+  body::-webkit-scrollbar {
+    background-color: white;
+    width: 6px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: white;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #333;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   a {
     background: linear-gradient(0deg, white, white) no-repeat right bottom / 0
       var(--bg-h);
+  }
+
+  body::-webkit-scrollbar {
+    background-color: #181a1b;
+    width: 6px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: #181a1b;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #999;
   }
 }
 

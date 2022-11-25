@@ -28,9 +28,10 @@ form.addEventListener('submit', e => {
 });
 
 const openSideNav = () => {
+  scrollToTop();
+  body.classList.add('overflow-hidden');
   sideNav.classList.remove('hidden');
   sideNav.classList.add('flex');
-  body.classList.add('overflow-hidden');
   setTimeout(() => {
     sideNav.classList.add('translate-x-0');
     sideNav.classList.remove('-translate-x-[100vw]');
@@ -38,6 +39,7 @@ const openSideNav = () => {
 };
 
 const closeSideNav = () => {
+  body.classList.remove('overflow-hidden');
   sideNav.classList.remove('translate-x-0');
   sideNav.classList.add('-translate-x-[100vw]');
   setTimeout(() => {
@@ -82,6 +84,8 @@ const openModalAndCloseSideNav = () => {
 
 const openModal = () => {
   const modalContent = modalAddBook.children[0];
+  scrollToTop();
+  body.classList.add('overflow-hidden');
   modalAddBook.classList.add('flex');
   modalAddBook.classList.remove('hidden');
   setTimeout(() => {
@@ -89,16 +93,17 @@ const openModal = () => {
     modalAddBook.classList.add('opacity-100');
   }, 300);
   setTimeout(() => {
-    modalContent.classList.remove('-translate-y-[200%]');
+    modalContent.classList.remove('-translate-y-[200vw]');
     modalContent.classList.add('translate-y-0');
   }, 700);
 };
 
 const closeModal = () => {
   const modalContent = modalAddBook.children[0];
+  body.classList.remove('overflow-hidden');
   modalContent.classList.remove('translate-y-0');
   modalAddBook.classList.remove('opacity-100');
-  modalContent.classList.add('-translate-y-[200%]');
+  modalContent.classList.add('-translate-y-[200vw]');
   modalAddBook.classList.add('opacity-0');
   setTimeout(() => {
     modalAddBook.classList.remove('flex');
@@ -125,4 +130,8 @@ const delayedResize = () => {
 
 const goToDetail = () => {
   window.location.href = './detail';
+};
+
+const scrollToTop = () => {
+  window.scrollTo({top: 0, behavior: 'smooth'});
 };

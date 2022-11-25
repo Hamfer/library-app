@@ -22,6 +22,7 @@ modalEditBook.addEventListener('click', e => {
 
 const openEditModal = () => {
   const modalContent = modalEditBook.children[0];
+  scrollToTop();
   modalEditBook.classList.add('flex');
   modalEditBook.classList.remove('hidden');
   setTimeout(() => {
@@ -29,7 +30,7 @@ const openEditModal = () => {
     modalEditBook.classList.add('opacity-100');
   }, 300);
   setTimeout(() => {
-    modalContent.classList.remove('-translate-y-[200%]');
+    modalContent.classList.remove('-translate-y-[200vw]');
     modalContent.classList.add('translate-y-0');
   }, 700);
 };
@@ -38,7 +39,7 @@ const closeEditModal = () => {
   const modalContent = modalEditBook.children[0];
   modalContent.classList.remove('translate-y-0');
   modalEditBook.classList.remove('opacity-100');
-  modalContent.classList.add('-translate-y-[200%]');
+  modalContent.classList.add('-translate-y-[200vw]');
   modalEditBook.classList.add('opacity-0');
   setTimeout(() => {
     modalEditBook.classList.remove('flex');
@@ -54,6 +55,7 @@ modalDeleteBook.addEventListener('click', e => {
 
 const openDeleteModal = () => {
   const modalContent = modalDeleteBook.children[0];
+  scrollToTop();
   modalDeleteBook.classList.add('flex');
   modalDeleteBook.classList.remove('hidden');
   setTimeout(() => {
@@ -76,4 +78,8 @@ const closeDeleteModal = () => {
     modalDeleteBook.classList.remove('flex');
     modalDeleteBook.classList.add('hidden');
   }, 700);
+};
+
+const scrollToTop = () => {
+  window.scrollTo({top: 0, behavior: 'smooth'});
 };
