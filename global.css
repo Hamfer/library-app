@@ -67,6 +67,7 @@ a {
   --bg-h: 2px;
   padding-bottom: 2px;
 }
+
 a:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
   background-position-x: left;
